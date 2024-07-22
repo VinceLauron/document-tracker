@@ -10,7 +10,7 @@ if (!isset($_SESSION['login_id'])) {
 }
 
 // Database connection
-include 'db_connect.php';
+require 'db_connect.php';
 
 // Fetch requests from database, ordered by created_at or id in descending order
 $sql = "SELECT * FROM request WHERE status = 'pending' OR status = 'onprocess' ORDER BY date_created DESC"; // or ORDER BY id DESC

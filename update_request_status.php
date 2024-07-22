@@ -10,7 +10,7 @@ if (!isset($_SESSION['login_id'])) {
 }
 
 // Database connection
-include 'db_connect.php';
+require 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $request_id = $_POST['request_id'];

@@ -1,5 +1,5 @@
 <?php 
-include('db_connect.php');
+require('db_connect.php');
 if(isset($_GET['id'])){
 $user = $conn->query("SELECT * FROM users where id =".$_GET['id']);
 foreach($user->fetch_array() as $k =>$v){

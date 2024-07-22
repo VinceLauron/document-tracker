@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php';
+require 'db_connect.php';
 
 // Fetch all requests
 $result_all_requests = $conn->query("SELECT * FROM request ORDER BY date_created DESC");

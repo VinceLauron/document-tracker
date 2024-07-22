@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db_connect.php';
+require 'db_connect.php';
 
 if (isset($_GET['action']) && $_GET['action'] == 'save_files') {
     $id = isset($_POST['id']) ? $_POST['id'] : '';
@@ -70,7 +70,7 @@ class Action {
 
     public function __construct() {
         ob_start();
-        include 'db_connect.php';
+        require 'db_connect.php';
         $this->db = $conn;
     }
 

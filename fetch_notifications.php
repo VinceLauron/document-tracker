@@ -7,7 +7,7 @@ if (!isset($_SESSION['login_id'])) {
 }
 
 // Database connection
-include 'db_connect.php';
+require 'db_connect.php';
 
 $sql = "SELECT * FROM notifications WHERE status = 0 ORDER BY date_created DESC";
 $result = $conn->query($sql);

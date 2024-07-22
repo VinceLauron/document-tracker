@@ -7,7 +7,7 @@ if (!isset($_SESSION['login_id'])) {
 }
 
 // Database connection
-include 'db_connect.php';
+require 'db_connect.php';
 
 $sql = "UPDATE notifications SET status = 1";
 $conn->query($sql);
