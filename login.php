@@ -11,11 +11,6 @@
   <?php include('./header.php'); ?>
   <?php 
     session_start();
-    $conn = new mysqli('localhost', 'u510162695_fms_db_root', '1Fms_db_root', 'u510162695_fms_db');
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
     if(isset($_SESSION['login_id']))
     header("location:indexs.php?page=home");
   ?>
