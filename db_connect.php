@@ -1,5 +1,5 @@
 <?php
-$servername = " 127.0.0.1/3306";
+$servername = "localhost";
 $username = "u510162695_fms_db_root";
 $password = "1Fms_db_root";
 $dbname = "u510162695_fms_db";
