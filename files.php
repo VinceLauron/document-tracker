@@ -1,5 +1,5 @@
 <?php 
-include 'db_connect.php';
+require 'db_connect.php';
 if(!isset($_SESSION['login_id']))
 header('location:login.php');
 $folder_parent = isset($_GET['fid'])? $_GET['fid'] : 0;
