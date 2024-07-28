@@ -1,4 +1,5 @@
 <?php
+include 'db_connect.php';
 // Check if session is already started
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -9,19 +10,6 @@ if (!isset($_SESSION['login_id'])) {
     exit();
 }
 
-// Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "fms_db";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $request_id = $_POST['request_id'];

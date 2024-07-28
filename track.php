@@ -62,17 +62,11 @@
 </form>
 
 <?php
+include 'db_connect.php';
   if(!isset($_SESSION['login_id']))
   header('location:login.php');
 // Check if form is submitted
 if (isset($_POST["submit"])) {
-    // Establish database connection
-    $conn = new mysqli('localhost', 'root', '', 'fms_db');
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     // Sanitize and get search term
     $file_number = $_POST["search"];

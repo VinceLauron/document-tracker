@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'db_connect.php';
 if (!isset($_SESSION['email'])) {
     header("Location: login.php");
     exit();
@@ -16,19 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date_created = htmlspecialchars($_POST['date_created']);
     $email = $_SESSION['email']; // Get the logged-in user's email
 
-    // Database connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "fms_db";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     // Insert data into database
     $sql = "INSERT INTO request (fullname, contact, id_number, course, docu_type, purpose, date_created, email, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'pending')";
@@ -52,11 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     icon: "success",
                     confirmButtonText: "OK"
                 }).then(function() {
-<<<<<<< HEAD
                     window.location.href = "index.php";
-=======
-                    window.location.href = "home.php";
->>>>>>> 338cc41baf20f40be0953b24b32df9d486bf1981
                 });
             });
         </script>';
