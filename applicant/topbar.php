@@ -168,7 +168,8 @@
         }
     </script>
 </head>
-<body>
+<bod>
+    <?php include 'db_connect.php'; ?>
     <div class="topbar">
         <div class="topbar-brand">MCC Document Tracker</div>
         <div class="topbar-menu" style="justify-content: flex-end; margin-right: 55px;">

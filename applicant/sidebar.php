@@ -1,4 +1,5 @@
 <?php
+include 'db_connect.php';
 if (!isset($_SESSION['email'])) {
     header("Location: index.php");
     exit();
